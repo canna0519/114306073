@@ -1,0 +1,172 @@
+body {
+    background-color: #eeede1;
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.outside-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.left-pannel {
+    width: 30%;
+    background-color: #eef3fb;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.right-panel {
+    width: 70%;
+    padding: 24px 28px;
+    box-sizing: border-box;
+}
+
+.photo-panel {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.role {
+    margin-top: 4px;
+    margin-bottom: 16px;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Education */
+.Education {
+    margin-bottom: 16px;
+}
+
+.Education h2 {
+    margin: 0 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ccc;
+}
+
+.edu-item {
+    display: flex;
+    margin-bottom: 4px;
+}
+
+.year {
+    width: 120px;
+    font-weight: bold;
+}
+
+.description {
+    flex: 1;
+}
+
+/* Skill */
+.Skill {
+    margin-bottom: 16px;
+}
+
+.Skill h2 {
+    margin: 0 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tag {
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 4px 4px 0 0;
+    border-radius: 12px;
+    background-color: #e7f0ff;
+    color: #333;
+    font-size: 13px;
+}
+
+/* Homework & Lab */
+.HomeworkLab {
+    margin-bottom: 16px;
+}
+
+.HomeworkLab h2 {
+    margin: 0 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ccc;
+}
+
+.hw-lab-container {
+    display: flex;
+    gap: 16px;
+}
+
+.hw-column,
+.lab-column {
+    flex: 1;
+    background-color: #f5f7ff;
+    border-radius: 10px;
+    padding: 10px 14px;
+}
+
+.hw-column h3,
+.lab-column h3 {
+    margin-top: 0;
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.hw-column a,
+.lab-column a {
+    text-decoration: none;
+    color: #1b4f9c;
+}
+
+.hw-column a:hover,
+.lab-column a:hover {
+    text-decoration: underline;
+}
+
+/* Favorite Music */
+.FavoriteMusic {
+    margin-bottom: 16px;
+}
+
+.FavoriteMusic h2 {
+    margin: 0 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ccc;
+}
+
+.music-row {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.music-item {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.music-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 6px;
+}
+
+.song-title {
+    font-size: 13px;
+}
+
+.music-note {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #555;
+}
