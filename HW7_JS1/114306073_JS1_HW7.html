@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentID_HW7_1A2B</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 30px;
+        }
+        #record {
+            margin-top: 20px;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+
+<h1>StudentID_HW7_1A2B</h1>
+
+<input type="text" id="guessInput" placeholder="Enter 4 unique numbers">
+<button onclick="play()">Guess!</button>
+
+<div id="record"><strong>Game Record:</strong></div>
+
+<script>
+
+let answer = generateAnswer();
+let count = 0;
+
+function generateAnswer() {
+    let nums = ['0','1','2','3','4','5','6','7','8','9'];
+    let ans = "";
+    for (let i = 0; i < 4; i++) {
+        let idx = Math.floor(Math.random() * nums.length);
+        ans += nums[idx];
+        nums.splice(idx, 1);
+    }
+    return ans;
+}
+
+function isValid(str) {
+    if (str.length !== 4) return false;
+    if (!/^\d{4}$/.test(str)) return false;
+
+    // check duplicate
+    let set = new Set(str);
+    return set.size === 4;
+}
+
+function checkAB(guess, ans) {
+    let A = 0, B = 0;
+    for (let i = 0; i < 4; i++) {
+        if (guess[i] === ans[i]) A++;
+        else if (ans.includes(guess[i])) B++;
+    }
+    return `${A}A${B}B`;
+}
+
+function play() {
+    let input = document.getElementById("guessInput");
+    let guess = input.value.trim();
+
+    if (!isValid(guess)) {
+        alert("Invalid input! Please enter 4 unique digits.");
+        input.value = "";
+        return;
+    }
+
+    count++;
+    let result = checkAB(guess, answer);
+
+    let rec = document.getElementById("record");
+    rec.innerHTML += `\n第${count}次: ${guess} → ${result}`;
+
+    if (result === "4A0B") {
+        alert(`恭喜你答對了！總共猜了 ${count} 次。\n正確答案是：${answer}`);
+        input.disabled = true;
+        return;
+    }
+
+    input.value = "";
+}
+
+</script>
+
+</body>
+</html>
